@@ -1,0 +1,17 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the data into a pandas dataframe
+df = pd.read_csv('advertising_data.csv')
+
+# Create a scatter plot of the relationship between advertising spending and sales
+sns.scatterplot(data=df, x='advertising_spending', y='sales')
+plt.title('Relationship between advertising spending and sales')
+plt.xlabel('Advertising spending')
+plt.ylabel('Sales')
+plt.show()
+
+# Calculate the correlation between advertising spending and sales
+correlation = df['advertising_spending'].corr(df['sales'])
+print('Correlation coefficient:', correlation)
